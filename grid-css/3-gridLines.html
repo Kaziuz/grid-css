@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>using css grid - grid lines</title>
+  <style>
+    body {
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      font-weight: bold;
+    }
+    /* Core concepts: Grid Lines */
+    /* grid-column-start: Indica la ubicación de inicio de un elemento en las columnas que existan */
+    /* grid-column-end: Indica en donde terminara el elemento, se usa para crear el ancho del elemento*/
+    /* grid-column: Indicamos la ubicacion y el tamaño de un elemento en las columns**/
+    /* grid-row-start: Indicamos la ubicacion de inicio de un elemento en las rows que existan */
+    /* grid-row-end: Indiamos en donde terminara el elemento, se usa para crear el alto del elemento */
+    /* grid-row: Indicamos la ubicacion y el tamaño de un elemento en las rows*/
+    #content {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, minmax(150px, auto));
+      grid-gap: 10px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    #content div {
+      background: #3bbced;
+      padding: 30px;
+    }
+    #content div:nth-child(even) {
+      background: #777;
+      padding: 30px;
+    }
+    .one {
+      /* grid-column-start: 1; */
+      /* grid-column-end: 3; */
+      grid-column: 1 / 3;
+    }
+    .two {
+      /* grid-column-start: 3; */
+      /* grid-column-end: 7; */
+      grid-column: 3 / 7;
+    }
+    .three {
+      /* grid-column-start: 1; */
+      /* grid-column-end: 4; */
+      grid-column: 1 / 4;
+      /* grid-row-start: 2; */
+      /* grid-row-end: 4; */
+      grid-row: 2 / 4;
+    }
+    .four {
+      /* grid-column-start: 4; */
+      /* grid-column-end: 7; */
+      grid-column: 4 / 7;
+      /* grid-row-start: 2; */
+      /* grid-row-end: 4; */
+      grid-row: 2 / 4;
+    }
+    .five {
+      /* grid-column-start: 3; */
+      /* grid-column-end: 7; */
+      grid-column: 3 / 7;
+    }
+    .six {
+      /* grid-row-start: 4; */
+      grid-row: 4;
+      /* grid-column-start: 1; */
+      /* grid-column-end: 3; */
+      grid-column: 1 / 3;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="five">5</div>
+    <div class="six">6</div>
+  </div> 
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      color: #fff;
+      font-family:'Courier New', Courier, monospace;
+      text-align: center;
+      font-weight: bold;
+    }
+    #content {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      grid-gap: 10px;
+      /* Define grid template area, El . es un blanco o nada en la template areas*/
+      grid-template-areas:
+        "header header header header"
+        "aside . main main"
+        "nav . main main"
+        "section section section section"
+        "section section section section"
+        "footer footer footer footer";
+    }
+    #content > * {
+      background: #3bbced;
+      padding: 30px;
+    }
+    /* Define grid areas for luego llamarlas en la grid-template areas y contruir el layout*/
+    header { grid-area: header; }
+    main { grid-area: main; }
+    aside { grid-area: aside; }
+    nav { grid-area: nav; }
+    section { grid-area: section; }
+    footer { grid-area: footer; }
+  </style>
+  <title>css grid - areas</title>
+</head>
+<body>
+  <div id="content">
+    <header>Header</header>
+    <main>Main</main>
+    <section>Section</section>
+    <aside>Aside</aside>
+    <nav>Nav</nav>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
